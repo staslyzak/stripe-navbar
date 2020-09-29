@@ -2,9 +2,8 @@
 
 https://github.com/oklas/react-app-rewire-alias
 
-// config-overrides.js
+# config-overrides.js
 
-<!--
 const {alias, configPaths} = require('react-app-rewire-alias')
 
 module.exports = function override(config) {
@@ -12,11 +11,9 @@ module.exports = function override(config) {
 
   return config
 }
- -->
 
-// jsconfig.json
+# jsconfig.json
 
-<!--
 {
   "compilerOptions": {
     "baseUrl": ".",
@@ -31,11 +28,8 @@ module.exports = function override(config) {
     }
   }
 }
- -->
 
 
-// package.json
+# package.json
 
-<!-- 
-    "start": "react-scripts start" -> "react-app-rewired start", 
- -->
+"start": "react-scripts start" -> "react-app-rewired start", 
