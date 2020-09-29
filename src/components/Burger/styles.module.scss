@@ -1,0 +1,70 @@
+@import '../../scss/variables';
+
+$transformTransition: 0.3s;
+
+.burgerMenu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: $transformTransition;
+  opacity: 0;
+  transform-origin: top right;
+  transform: translate(0, 0) scale(0.9);
+  overflow: auto;
+  visibility: hidden;
+  background: $headerBg;
+  pointer-events: none;
+}
+
+.burgerMenuOpen {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.burgerMenuCloseX {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  width: 64px;
+  height: 64px;
+  line-height: 64px !important;
+  font-size: 16px;
+  color: $textColor !important;
+  cursor: pointer;
+}
+
+.burgerMenuSection {
+  & > h2 {
+    line-height: 18px;
+    font-size: 18px;
+    color: $textColor;
+  }
+  & > section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    & > a {
+      line-height: 24px;
+    }
+  }
+}
+
+.burgerMenuBody {
+  width: 100%;
+  height: 100%;
+  padding: 48px;
+  margin-top: 32px;
+}
+
+.burgerMenuFooter {
+  width: 100%;
+  background: $footerBg;
+  padding: 24px;
+}

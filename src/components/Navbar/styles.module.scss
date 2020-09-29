@@ -1,0 +1,85 @@
+@import '../../scss/variables';
+
+$transformTransition: 0.3s;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: calc(#{$layoutWidth} - 48px);
+}
+
+.navbarLogo {
+  cursor: pointer;
+  font-size: 64px;
+}
+
+.navbarMenu {
+  overflow: hidden;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: $headerBg;
+  opacity: 0;
+  visibility: hidden;
+  transition: #{$transformTransition};
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg) translateY(-10px) scale(0.95);
+  display: flex;
+  color: $textColor;
+}
+
+.navbarMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateX(0deg) translateY(0px) scale(1);
+}
+
+.navbarMenuArrow {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  color: $primaryColor !important;
+  z-index: 1000000 !important;
+  transition: transform #{$transformTransition}, opacity 1s;
+  opacity: 0;
+}
+
+.navbarMenuContent {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  max-width: calc(#{$layoutWidth} - 48px);
+  color: $textColor;
+  opacity: 0;
+  transition: transform #{$transformTransition}, opacity 1s;
+  & > div {
+    flex: 0 0 70%;
+    transition: 0.5s;
+  }
+}
+
+.navbarMenuItem {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.navbarMenuItemActive {
+  transform: skew(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.navbarMenuSubItem {
+  padding: 24px;
+  // max-width: calc(#{$layoutWidth} - 48px);
+  // margin: auto;
+  & > a {
+    line-height: 56px;
+    display: block;
+  }
+}
