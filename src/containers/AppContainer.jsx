@@ -1,13 +1,13 @@
 import React, {lazy, Suspense} from 'react'
 import {Spin} from 'antd'
 import {Switch, Route} from 'react-router-dom'
-import {BaseLayout} from '../layouts'
+import {BaseLayout} from '@layouts'
 
 const routes = [
   {
     exact: true,
     path: '/',
-    component: lazy(() => import('../pages/Home')),
+    component: lazy(() => import('@pages/Home')),
   },
 ]
 
