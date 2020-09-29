@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {Button, Row, Col} from 'antd'
 import {MenuOutlined, RightOutlined, CloseOutlined} from '@ant-design/icons'
 
-import css from './styles.module.scss'
+import css from './styles.scss'
 
 export const Burger = ({menu}) => {
   const [open, setOpen] = useState(false)

@@ -1,4 +1,4 @@
-@import '../../scss/variables';
+@import '@scss/variables';
 
 $transformTransition: 0.3s;
 
@@ -66,5 +66,5 @@ $transformTransition: 0.3s;
 .burgerMenuFooter {
   width: 100%;
   background: $footerBg;
-  padding: 24px;
+  padding: 12px;
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import {Layout} from 'antd'
 
-import {Navbar} from '../../components'
-import css from './styles.module.scss'
+import {Navbar} from '@components'
+import css from './styles.scss'
 
 const menu = [
   {

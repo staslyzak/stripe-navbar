@@ -5,10 +5,10 @@ import {Button} from 'antd'
 import {RightOutlined, CaretUpOutlined} from '@ant-design/icons'
 import Icon from '@ant-design/icons/lib/components/Icon'
 
-import {useBreakpoint, useMediaQuery} from '../../hooks'
-import {Logo as LogoIcon} from '../../assets'
+import {useMediaQuery} from '@hooks'
+import {Logo as LogoIcon} from '@assets'
 import {Burger} from '../Burger'
-import css from './styles.module.scss'
+import css from './styles.scss'
 
 export const Navbar = ({menu}) => {
   const [open, setOpen] = useState(false)
@@ -16,7 +16,7 @@ export const Navbar = ({menu}) => {
   const [activeItem, setActiveItem] = useState('')
   const [arrowStyle, setArrowStyle] = useState({opacity: 0})
   const [menuStyle, setMenuStyle] = useState({opacity: 0})
-  const isDesktop = useBreakpoint({max: 766})
+  const isMobile = useMediaQuery('(max-width: 766px)')
 
   const closeMenu = useCallback(() => {
     setOpen(false)
@@ -91,7 +91,7 @@ export const Navbar = ({menu}) => {
     <>
       <div className={css.navbar}>
         <Icon component={LogoIcon} className={css.navbarLogo} />
-        {isDesktop && (
+        {!isMobile && (
           <div data-role="menu-triggers">
             {menu.map((item, idx) => (
               <Button
@@ -111,14 +111,14 @@ export const Navbar = ({menu}) => {
             />
           </div>
         )}
-        {!isDesktop && <Burger menu={menu} />}
-        {isDesktop && (
+        {isMobile && <Burger menu={menu} />}
+        {!isMobile && (
           <Button size="large" type="link">
             Sign in <RightOutlined />
           </Button>
         )}
       </div>
-      {isDesktop && (
+      {!isMobile && (
         <div
           className={cx(css.navbarMenu, {
             [css.navbarMenuOpen]: open,
